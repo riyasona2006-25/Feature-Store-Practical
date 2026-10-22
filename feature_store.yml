@@ -1,0 +1,57 @@
+
+# MLOps Practical 2 - Feature Stores
+
+practical:
+  title: "Feature Stores"
+  language: "Java"
+  description: "Simple feature store for machine learning workflows"
+
+feature_store:
+  name: "SimpleFeatureStore"
+
+  repository:
+    description: "Registered feature definitions"
+
+  offline_store:
+    purpose: "Store historical features for training and analysis"
+
+  online_store:
+    purpose: "Store the latest features for inference"
+
+feature_groups:
+  - name: "customer_features"
+    entity_key: "customer_id"
+    description: "Purchase activity features for customer models"
+
+    columns:
+      - total_orders
+      - avg_order_value
+      - days_since_last_order
+
+    sample_data:
+      - customer_id: 101
+        total_orders: 5
+        avg_order_value: 450.0
+        days_since_last_order: 4
+
+      - customer_id: 102
+        total_orders: 2
+        avg_order_value: 220.0
+        days_since_last_order: 20
+
+      - customer_id: 103
+        total_orders: 9
+        avg_order_value: 780.0
+        days_since_last_order: 2
+
+      - customer_id: 101
+        total_orders: 6
+        avg_order_value: 470.0
+        days_since_last_order: 1
+
+workflows:
+  - name: "customer_churn"
+    purpose: "Reuse customer features for churn risk prediction"
+
+  - name: "offer_recommendation"
+    purpose: "Reuse customer features for offer recommendations"
