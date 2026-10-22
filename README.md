@@ -1,4 +1,4 @@
-# MLOps Practical 2 — Feature Stores
+# MLOps Practical 5 — Feature Stores
 
 ## Aim
 To implement a simple feature store that supports feature registration, data ingestion, offline feature storage, online feature retrieval, and feature reuse in machine learning workflows.
